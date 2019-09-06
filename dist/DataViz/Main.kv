@@ -1,0 +1,100 @@
+<MyScreenManager>:
+    MainMenu:
+    BarChartRaceScreen:
+
+<MainMenu>:
+    name: 'MainMenu'
+    BoxLayout:
+        orientation: 'vertical'
+        font_name: 'Montserrat'
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: None
+            height: 50
+
+            Label:
+                canvas:
+                    Color:
+                        rgba: .47,.43,.848,0.5
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                padding_x: 20
+                font_size: 20
+                text: 'DATAVIZ'
+
+            Label:
+                canvas:
+                    Color:
+                        rgba: .47,.43,.848,0.5
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text_size: self.size
+                halign: 'right'
+                valign: 'middle'
+                padding_x: 20
+                font_size: 20
+                text: 'A product of Metric Analytics'
+
+        StackLayout:
+            orientation: 'lr-tb'
+            padding: 50
+            spacing: 50
+
+            BoxLayout:
+            #BarChartRace
+            #:import SlideTransition kivy.uix.screenmanager.SlideTransition
+                size_hint_y: None
+                size_hint_x: None
+                height: 300
+                width: 250
+                orientation: 'vertical'
+                ImageButton:
+                    source: 'VizModules/BarChartRace/BarChartRace.jpg'
+                    width: 50
+                    on_release:
+                        app.root.current = 'BarChartRace'
+                        app.root.transition = SlideTransition(direction = 'right')
+                Label:
+                    size_hint_y: None
+                    height: 30
+                    valign: 'top'
+                    text: 'Bar Chart Race'
+
+            BoxLayout:
+            #LineChart
+                size_hint_y: None
+                size_hint_x: None
+                height: 300
+                width: 250
+                orientation: 'vertical'
+                ImageButton:
+                    source: 'VizModules/LineChart/LineChart.png'
+                    width: 50
+                Label:
+                    size_hint_y: None
+                    height: 30
+                    valign: 'top'
+                    text: 'Line Chart'
+
+            BoxLayout:
+            #PieChart
+                size_hint_y: None
+                size_hint_x: None
+                height: 300
+                width: 250
+                orientation: 'vertical'
+                ImageButton:
+                    source: 'VizModules/PieChart/PieChart.png'
+                    width: 50
+                Label:
+                    size_hint_y: None
+                    height: 30
+                    valign: 'top'
+                    text: 'Pie Chart'
+
