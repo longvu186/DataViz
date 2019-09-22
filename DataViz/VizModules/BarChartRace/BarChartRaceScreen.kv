@@ -1,0 +1,249 @@
+<HelpPopup>:
+    title: 'What are these configurations?'
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            do_scroll_y: True
+            do_scroll_x: False
+            Label:
+                size_hint: 1, None
+                height: self.minimum_height
+                text_size: self.width, None
+                height: self.texture_size[1]
+                text: root.text
+        AnchorLayout:
+            anchor_x: 'center'
+            anchor_y: 'center'
+            size_hint_y: None
+            height: 100
+            Button:
+                size_hint_x: None
+                size_hint_y: None
+                height: 50
+                width: 200
+                text: 'Close'
+                on_release: root.dismiss()
+
+<BarChartRaceScreen>:
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+#:import Factory kivy.factory.Factory
+#:include VizModules/FieldLayout.kv
+    name: 'BarChartRace'
+    BoxLayout:
+        orientation: 'vertical'
+
+        BoxLayout:
+            # Top bar
+            orientation: 'horizontal'
+            size_hint_y: None
+            height: 50
+            Label:
+                canvas:
+                    Color:
+                        rgba: .47,.43,.848,0.5
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                padding_x: 20
+                font_size: 20
+                text: 'Bar Chart Race'
+
+        BoxLayout:
+            orientation: 'horizontal'
+
+            BoxLayout:
+                # Layout of the control panel on the left
+                size_hint_x: None
+                width: 200
+                canvas:
+                    Color:
+                        rgba: .47,.43,.848,0.5
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                orientation: 'vertical'
+
+                AnchorLayout:
+                    anchor_x: 'center'
+                    Image:
+                        source: 'VizModules/BarChartRace/BarChartRace.jpg'
+
+                AnchorLayout:
+                    anchor_x: 'center'
+                    anchor_y: 'center'
+                    Button:
+                        size_hint_y: None
+                        size_hint_x: None
+                        height: 50
+                        width: 100
+                        text: 'Help'
+                        on_release: Factory.HelpPopup().open()
+
+                AnchorLayout:
+                    anchor_x: 'center'
+                    anchor_y: 'center'
+                    Button:
+                        size_hint_y: None
+                        size_hint_x: None
+                        height: 50
+                        width: 100
+                        text: 'Edit Excel'
+                        on_release: root.edit_excel()
+
+                AnchorLayout:
+                    anchor_x: 'center'
+                    anchor_y: 'center'
+                    Button:
+                        size_hint_y: None
+                        size_hint_x: None
+                        height: 50
+                        width: 100
+                        text: 'Back'
+                        on_release:
+                            app.root.current = 'MainMenu'
+                            app.root.transition = SlideTransition(direction = 'left')
+
+            GridLayout:
+                cols: 1
+                rows: 2
+                # Layout of the input fields
+                orientation: 'vertical'
+
+                # Input fields
+                # -------------------------------------------------------
+                ScrollView:
+                    do_scroll_x: False
+                    do_scroll_y: True
+
+                    StackLayout:
+                        padding: 30
+                        spacing: 20
+                        size_hint: 1, None
+                        height: self.minimum_height
+
+                        FieldBox:
+                            Label:
+                                size_hint_x: None
+                                width: 200
+                                text: 'Title'
+                            AnchorLayout:
+                                anchor_y: 'center'
+                                TextInput:
+                                    id: title
+                                    size_hint_y: None
+                                    height: 30
+
+                        FieldBox:
+                            Label:
+                                size_hint_x: None
+                                width: 200
+                                text: 'Color of time indicator'
+                            AnchorLayout:
+                                anchor_y: 'center'
+                                TextInput:
+                                    id: time_text_color
+                                    size_hint_y: None
+                                    height: 30
+                                    text: 'black'
+
+                        FieldBox:
+                            Label:
+                                size_hint_x: None
+                                width: 200
+                                text: 'Value format'
+                            AnchorLayout:
+                                anchor_y: 'center'
+                                TextInput:
+                                    id: value_format
+                                    size_hint_y: None
+                                    height: 30
+                                    text: '{}'
+
+                        FieldBox:
+                            Label:
+                                size_hint_x: None
+                                width: 200
+                                text: 'Transparent background'
+                            AnchorLayout:
+                                anchor_y: 'center'
+                                CheckBox:
+                                    id: transparent_background
+
+                        FieldBox:
+                            Label:
+                                size_hint_x: None
+                                width: 200
+                                text: 'Floating point'
+                            AnchorLayout:
+                                anchor_y: 'center'
+                                TextInput:
+                                    id: floating_point
+                                    size_hint_y: None
+                                    height: 30
+                                    text: '0'
+
+                        FieldBox:
+                            Label:
+                                size_hint_x: None
+                                width: 200
+                                text: 'Data interpolation'
+                            AnchorLayout:
+                                anchor_y: 'center'
+                                TextInput:
+                                    id: data_interpolation
+                                    size_hint_y: None
+                                    height: 30
+                                    text: '20'
+
+                        FieldBox:
+                            Label:
+                                size_hint_x: None
+                                width: 200
+                                text: 'FPS'
+                            AnchorLayout:
+                                anchor_y: 'center'
+                                TextInput:
+                                    id: fps
+                                    size_hint_y: None
+                                    height: 30
+                                    text: '30'
+
+                        FieldBox:
+                            Label:
+                                size_hint_x: None
+                                width: 200
+                                text: 'Font size'
+                            AnchorLayout:
+                                anchor_y: 'center'
+                                TextInput:
+                                    id: font_size
+                                    size_hint_y: None
+                                    height: 30
+                                    text: '25'
+
+
+                # -------------------------------------------------------
+
+                BoxLayout:
+                    size_hint_y: 0.25
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        AnchorLayout:
+                            Button:
+                                anchor_x: 'center'
+                                size_hint_x: 0.5
+                                size_hint_y: 0.5
+                                text: 'Preview'
+                                on_release: root.preview()
+
+
+                        AnchorLayout:
+                            Button:
+                                anchor_x: 'center'
+                                size_hint_x: 0.5
+                                size_hint_y: 0.5
+                                text: 'Export'
+                                on_release: root.export()
