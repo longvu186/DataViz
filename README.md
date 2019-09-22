@@ -5,6 +5,4 @@ Bar Chart Race is available
 
 Instructions are now included within the application. Please read the instructions carefully.
 
-**EXPORT**: At the moment the file will be saved into the "dist" folder. You'll see the percentage running in the console.
-
 >Made with Matplotlib and Kivy (and tears, due to the bugs)
