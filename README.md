@@ -3,6 +3,8 @@ Bar Chart Race is available
 
 **WARNING: THE APP IS REALLY FRAGILE (like my heart) SINCE IT'S NOT COMPLETE YET. EDIT FILES AT YOUR OWN RISK**
 
+## The app requires FFMpeg in order to export videos. Please install it here: https://ffmpeg.org/download.html
+
 Instructions are now included within the application. Please read the instructions carefully.
 
 >Made with Matplotlib and Kivy (and tears, due to the bugs)
