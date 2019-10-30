@@ -8,3 +8,5 @@ Bar Chart Race is available
 Instructions are now included within the application. Please read the instructions carefully.
 
 >Made with Matplotlib and Kivy (and tears, due to the bugs)
+
+New update: DataViz App is the app that i exported with pyinstaller. DataViz source is the code i worked on.
