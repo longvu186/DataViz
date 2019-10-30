@@ -1,0 +1,15 @@
+1. Title: This is the title, but it does nothing at the moment
+
+2. Color of time indicator: Color of the, well, time indicator. Please use hex color code
+
+3. Value format: Please do not delete the '{}'. The values appear at the end of the bars. The '{}' represents the values. You may add anything to the values. For instance, input '${}' if you want to add a dollar sign
+
+4. Transparent background: Tick this if you want a transparent background. This output file will be in .mov format (this format can only be open by some applications). You can then add your own background with video editors such as Premiere Pro
+
+5. Floating point: 0 means no digits after the comma. To add digits after the comma, add 0s and a 1 at the end. For instance: 0,001
+
+6. Data interpolation: Add values in between the originals. This smooths out the animation. Please leave the setting 20 or more. (the algorithm is in early stages, be careful when using it)
+
+7. FPS: It's frame rate!
+
+8. Font size: It's font size!

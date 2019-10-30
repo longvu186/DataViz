@@ -1,0 +1,36 @@
+<ItemLayout@BoxLayout>:
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+    size_hint_y: None
+    size_hint_x: None
+    height: 300
+    width: 250
+    orientation: 'vertical'
+
+<ItemLabel@Label>:
+    size_hint_y: None
+    height: 30
+    valign: 'top'
+
+<BarChartRace@ItemLayout>:
+    ImageButton:
+        source: 'VizModules/BarChartRace/BarChartRace.jpg'
+        width: 50
+        on_release:
+            app.root.current = 'BarChartRace'
+            app.root.transition = SlideTransition(direction = 'right')
+    ItemLabel:
+        text: 'Bar Chart Race'
+
+<LineChart@ItemLayout>:
+    ImageButton:
+        source: 'VizModules/LineChart/LineChart.png'
+        width: 50
+    ItemLabel:
+        text: 'Line Chart'
+
+<PieChart@ItemLayout>:
+    ImageButton:
+        source: 'VizModules/PieChart/PieChart.png'
+        width: 50
+    ItemLabel:
+        text: 'Pie Chart'

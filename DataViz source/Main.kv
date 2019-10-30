@@ -1,0 +1,55 @@
+<MyScreenManager>:
+    MainMenu:
+    BarChartRaceScreen:
+
+<MainMenu>:
+#:include VisualizationMenu.kv
+    name: 'MainMenu'
+    BoxLayout:
+        orientation: 'vertical'
+        font_name: 'Montserrat'
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: None
+            height: 50
+
+            Label:
+                canvas:
+                    Color:
+                        rgba: .47,.43,.848,0.5
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                padding_x: 20
+                font_size: 20
+                text: 'DATAVIZ'
+
+            Label:
+                canvas:
+                    Color:
+                        rgba: .47,.43,.848,0.5
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text_size: self.size
+                halign: 'right'
+                valign: 'middle'
+                padding_x: 20
+                font_size: 20
+                text: 'A product of Metric Analytics'
+
+        StackLayout:
+            orientation: 'lr-tb'
+            padding: 50
+            spacing: 50
+
+            BarChartRace:
+
+            LineChart:
+
+            PieChart:
+

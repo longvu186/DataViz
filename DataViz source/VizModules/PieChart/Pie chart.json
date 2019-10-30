@@ -1,0 +1,18 @@
+{
+	"title": "7 sàn TMDT",
+
+	"labels": ["Shopee","Thegioididong","Lazada","Tiki","Sendo","FPTShop","Dienmayxanh"],
+
+	"colors": ["#F8612D","#FED700","#EC6C20","#00B2E9","#E72323","#CD1818","#00A8E8"],
+
+	"explode": [0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05],
+
+	"font_name": "",
+	"font_size": 24,
+
+	"resolution": [1920, 1080],
+	"transparent": "true",
+
+	"data_interpolation": 50
+
+}
